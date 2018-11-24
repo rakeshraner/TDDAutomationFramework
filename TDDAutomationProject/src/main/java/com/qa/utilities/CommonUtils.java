@@ -2,7 +2,6 @@ package com.qa.utilities;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-
 import com.qa.base.TestBase;
 
 public class CommonUtils extends TestBase
