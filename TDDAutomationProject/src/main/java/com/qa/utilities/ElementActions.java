@@ -1,30 +1,44 @@
 package com.qa.utilities;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+
 import com.qa.base.TestBase;
 
-public class CommonUtils extends TestBase
+public class ElementActions extends TestBase
 {
 
-	public void EnterText(WebElement ele, String text)
+	public static void enterText(WebElement ele, String text)
 	{
+		ele.clear();
 		ele.sendKeys(text);
 	}
 	
-	public void SelectValueFromDD(WebElement ele, String value)
+	public static void click(WebElement ele)
+	{
+		ele.click();
+	}
+	
+	public static void clickWithJS(WebElement ele)
+	{
+		JavascriptExecutor js = (JavascriptExecutor)driver; 
+	    js.executeScript("arguments[0].click();", ele);
+	}
+	
+	public void selectValueFromDD(WebElement ele, String value)
 	{
 		Select select=new Select(ele);
 		select.selectByValue(value);		
 	}
 	
-	public void SelectIndexFromDD(WebElement ele, String index)
+	public void selectIndexFromDD(WebElement ele, String index)
 	{
 		Select select=new Select(ele);
 		select.selectByValue(index);		
 	}
 	
-	public void SelectTextFromDD(WebElement ele, String text)
+	public void selectTextFromDD(WebElement ele, String text)
 	{
 		Select select=new Select(ele);
 		select.selectByValue(text);
