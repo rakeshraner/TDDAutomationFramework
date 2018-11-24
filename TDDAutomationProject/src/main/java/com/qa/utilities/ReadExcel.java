@@ -11,13 +11,13 @@ public class ReadExcel
 	private static FileInputStream fis;
 	private static Object[][] data;
 	
-	public static Object[][] readData(int sheetIndex)
+	public static Object[][] readData(String sheetIndex)
 	{
 		try
 		{
 			fis=new FileInputStream("//Users//rakeshrane//TDDAutomationFramework//TDDAutomationFramework//TDDAutomationProject//src//main//java//com//qa//testdata//data.xlsx");
 			XSSFWorkbook wb=new XSSFWorkbook(fis);
-			XSSFSheet sheet=wb.getSheetAt(sheetIndex);
+			XSSFSheet sheet=wb.getSheet(sheetIndex);
 			
 			for(int i=0;i<sheet.getLastRowNum();i++)
 			{
