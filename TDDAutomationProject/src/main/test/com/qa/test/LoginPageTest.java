@@ -10,12 +10,12 @@ import com.qa.utilities.ElementVerify;
 
 public class LoginPageTest extends TestBase
 {
-	LoginPage loginPage;
-
+	LoginPage loginPage;	
 	public LoginPageTest()
 	{
 		super();
 	}
+	
 	
 	@BeforeMethod
 	public void setup()
