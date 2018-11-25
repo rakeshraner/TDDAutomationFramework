@@ -79,6 +79,12 @@ public class LoginPageTest extends TestBase
 		ElementVerify.verifyURL(currentPageUrl, "https://support.cogmento.com/");
 	}
 	
+	@Test(priority=7)
+	public void verifyApplicationLogo()
+	{
+		loginPage.isApplicationLogoPresent();
+	}	
+	
 	@AfterMethod
 	public void tearDown()
 	{

@@ -53,6 +53,11 @@ public class LoginPage extends TestBase
 		return new FeaturePage();
 	}
 	
+	public void isApplicationLogoPresent()
+	{
+		ElementVerify.isElementPresent(companyLogoXpath);
+	}	
+	
 	public PricingPage clickOnPricingLink()
 	{
 		ElementActions.clickWithJS(pricingButtonXpath);
