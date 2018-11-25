@@ -85,6 +85,13 @@ public class LoginPageTest extends TestBase
 		loginPage.isApplicationLogoPresent();
 	}	
 	
+	@Test(priority=8)
+	public void signUpLinkTest()
+	{
+		loginPage.clickOnSignUpLink();
+	}	
+
+	
 	@AfterMethod
 	public void tearDown()
 	{

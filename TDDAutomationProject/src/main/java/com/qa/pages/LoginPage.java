@@ -47,6 +47,11 @@ public class LoginPage extends TestBase
 	    return new HomeePage();
 	}
 	
+	public void clickOnSignUpLink()
+	{
+		ElementActions.clickWithJS(signUpButtonXpath);
+	}
+	
 	public FeaturePage clickOnFeatureLink()
 	{
 		ElementActions.clickWithJS(featuresButtonXpath);
