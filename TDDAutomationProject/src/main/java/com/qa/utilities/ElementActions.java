@@ -26,19 +26,19 @@ public class ElementActions extends TestBase
 	    js.executeScript("arguments[0].click();", ele);
 	}
 	
-	public void selectValueFromDD(WebElement ele, String value)
+	public static void selectValueFromDD(WebElement ele, String value)
 	{
 		Select select=new Select(ele);
 		select.selectByValue(value);		
 	}
 	
-	public void selectIndexFromDD(WebElement ele, String index)
+	public static void selectIndexFromDD(WebElement ele, String index)
 	{
 		Select select=new Select(ele);
 		select.selectByValue(index);		
 	}
 	
-	public void selectTextFromDD(WebElement ele, String text)
+	public static void selectTextFromDD(WebElement ele, String text)
 	{
 		Select select=new Select(ele);
 		select.selectByValue(text);

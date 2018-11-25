@@ -10,12 +10,12 @@ import com.qa.utilities.ElementVerify;
 
 public class LoginPageTest extends TestBase
 {
-	LoginPage loginPage;
-
+	LoginPage loginPage;	
 	public LoginPageTest()
 	{
 		super();
 	}
+	
 	
 	@BeforeMethod
 	public void setup()
@@ -78,6 +78,19 @@ public class LoginPageTest extends TestBase
 		String currentPageUrl=ElementVerify.getCurrentUrl();
 		ElementVerify.verifyURL(currentPageUrl, "https://support.cogmento.com/");
 	}
+	
+	@Test(priority=7)
+	public void verifyApplicationLogo()
+	{
+		loginPage.isApplicationLogoPresent();
+	}	
+	
+	@Test(priority=8)
+	public void signUpLinkTest()
+	{
+		loginPage.clickOnSignUpLink();
+	}	
+
 	
 	@AfterMethod
 	public void tearDown()
