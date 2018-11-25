@@ -6,8 +6,8 @@
       <class name="com.qa.test.SignUpPageTest">
         <methods>
           <include name="tearDown"/>
+          <include name="signUpTestWithPositiveData"/>
           <include name="setup"/>
-          <include name="signUpTest"/>
         </methods>
       </class> <!-- com.qa.test.SignUpPageTest -->
     </classes>
