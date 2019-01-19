@@ -41,8 +41,10 @@ public class LoginPage extends TestBase
 	//Common Methods for HomePage
 	public HomeePage login(String userName, String password)
 	{
-		ElementActions.enterText(usernameInputName, userName);
-		ElementActions.enterText(passwordInputName, password);
+		//ElementActions.enterText(usernameInputName, userName);
+		ElementActions.enterText("name", "username", userName);
+		//ElementActions.enterText(passwordInputName, password);
+		ElementActions.enterText("name", "password", password);
 		ElementActions.clickWithJS(signInButtonXpath);
 	    return new HomeePage();
 	}

@@ -1,5 +1,6 @@
 package com.qa.utilities;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -7,7 +8,41 @@ import org.openqa.selenium.support.ui.Select;
 import com.qa.base.TestBase;
 
 public class ElementActions extends TestBase
-{
+{	
+	public static By selectByLocator(String locatorType, String locatorAddress) 
+	{
+	    switch (locatorType.toUpperCase())
+	    {
+	      case "XPATH":
+	        return By.xpath(locatorAddress);
+	      case "TAGNAME":
+	        return By.tagName(locatorAddress);
+	      case "ID":
+	        return By.id(locatorAddress);
+	      case "NAME":
+	        return By.name(locatorAddress);
+	      case "CLASSNAME":
+	        return By.className(locatorAddress);
+	      case "LINKTEXT":
+	        return By.linkText(locatorAddress);
+	      case "PARTIALLINKTEXT":
+	        return By.partialLinkText(locatorAddress);
+	      default:
+	        System.out.println("No such loactor type found : " + locatorType);
+	    }
+	    return null;
+	  }
+
+	  public static void clickOn(String locatorType, String locatorAddress)
+	  {
+	    driver.findElement(selectByLocator(locatorType, locatorAddress)).click();
+	  }
+
+	  public static void enterText(String locatorType, String locatorAddress, String text)
+	  {
+		  driver.findElement(selectByLocator(locatorType, locatorAddress)).clear();
+		  driver.findElement(selectByLocator(locatorType, locatorAddress)).sendKeys(text);
+	  }
 
 	public static void enterText(WebElement ele, String text)
 	{
@@ -46,8 +81,8 @@ public class ElementActions extends TestBase
 	
 	public String getTextFromAlert()
 	{
-		String alertText =driver.switchTo().alert().getText();
-		return alertText;
+		String alertText;
+		return alertText =driver.switchTo().alert().getText();
 	}
 	
 	public void acceptAlert()
@@ -59,5 +94,5 @@ public class ElementActions extends TestBase
 	{
 		driver.switchTo().alert().dismiss();
 	}
-		
+	 
 }
